@@ -1,0 +1,67 @@
+Raster Maps
+========================================================
+transition: rotate  
+font-import: http://fonts.googleapis.com/css?family=Risque   
+font-family: 'Risque'  
+
+The data storage and transfer case against raster-based slippy maps.
+
+<small>Range of degrees of latitude for most web maps:  
+
+```r
+85.05112878 - -85.05112878
+```
+
+```
+[1] 170.1
+```
+</small>
+Zoom 12 map covers approximately the size of a metro area in tile.  
+Each tile tends to be 256 pixels wide x 256 pixels tall.  
+
+Computer Mapping History
+========================================================
+incremental: true
+
+- The earliest computer based mapping used ascii text characters to represent a map  
+- The balance between how much processing occurs on the terminal/desktop versus servers has varied over the years  
+-- GIS tends to be desktop heavy processing  
+-- Slippy maps (think Google Maps) tend to preprocess on the server  
+- The new balance seems to be finding a middle ground with vector maps  
+
+
+Map Data Formats (Raster v Vector)
+========================================================
+
+- The earliest computer based mapping used ascii text characters to represent a map  
+- Sensor based maps tend to collect raster data  
+-- gridded information  
+-- think of this like pixels of data  
+-- examples: weather radar & satellite imagery  
+- Infrastructure maps tend to use vector data  
+-- points, lines, polygons  
+-- stored with X, Y, and sometimes Z coordinates  
+-- examples: road maps, water/sewer networks  
+
+Slippy Maps
+========================================================
+
+Traditionally, slippy maps  
+- Start with vector data about the world (roads, areas, points of interest)  
+- Preprocess into raster images of a cartographic map product  
+- Send images to clients as needed depending on the zoom level and tiles requested  
+
+Drawbacks  
+- Lots of data being sent "across the wire" or "through the air" (even with compression)  
+- Baked in cartography (can't change colors, or filter content in the client)  
+
+Data Size  
+========================================================
+
+To start getting understanding the scale of data we're talking about, please try out this tool:  
+
+http://geoentelechy.shinyapps.io/DataProductsCourseProject  
+
+It will allow you to choose map zoom levels and see the resulting data size and should help you understand one reason more and more products are focusing on vector data.  
+
+C'mon, give it a try!
